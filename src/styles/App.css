@@ -1,1 +1,94 @@
+/* App.css */
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    width: calc(50% - 70px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 30px;
+    margin-left: 26%;
+  }
+  
+  button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+  }
+  
+  li input[type="text"] {
+    width: calc(50% - 70px);
+    margin-right: 5px;
+  }
+  
+  li button {
+    margin-left: 0;
+  }
+  
+  #Delete-btn {
+    background-color: #dc3545;
+  }
+  
+  #Delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  #Edit-btn {
+    background-color: #ffc107;
+  }
+  
+  #Edit-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  #Save-btn{
+    background-color: green;
+  }
+
+  #Save-btn:hover{
+    background-color: darkgreen;
+  }
