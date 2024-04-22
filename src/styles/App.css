@@ -77,26 +77,26 @@ body {
     margin-left: 0;
   }
   
-  #Delete-btn {
+  .delete {
     background-color: #dc3545;
   }
   
-  #Delete-btn:hover {
+  .delete:hover {
     background-color: #c82333;
   }
   
-  #Edit-btn {
+  .edit {
     background-color: #ffc107;
   }
   
-  #Edit-btn:hover {
+  .edit:hover {
     background-color: #e0a800;
   }
   
-  #Save-btn{
+  .save{
     background-color: green;
   }
 
-  #Save-btn:hover{
+  .save:hover{
     background-color: darkgreen;
   }

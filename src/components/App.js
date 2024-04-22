@@ -1,76 +1,73 @@
-
 import React, { useState } from "react";
-import './../styles/App.css';
-
+import "./../styles/App.css";
 
 const App = () => {
+  const [text, setText] = useState("");
+  const [editingText, setEditingText] = useState("");
+  const [todos, setTodos] = useState([]);
 
-  const[text,setText] = useState("");
-  const[todos,setTodo] = useState([]);
-
-  const handletextchange = (event) => {
+  const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
-  const addTo = () =>{
-    if(text.trim() !== ""){
-      setTodo([...todos,{text ,editing:false}]);
+  const addTo = () => {
+    if (text.trim() !== "") {
+      setTodos([...todos, { text, editing: false }]);
       setText("");
     }
   };
 
-  const editTo = (index) =>{
+  const editTo = (index) => {
     const newTodos = [...todos];
     newTodos[index] = { ...newTodos[index], editing: true };
-    setText(newTodos[index].text);
-    setTodo(newTodos);
+    setEditingText(newTodos[index].text);
+    setTodos(newTodos);
   };
 
-  const saveEdit = (index) =>{
-    if(text.trim() !== ""){
+  const saveEdit = (index) => {
+    if (editingText.trim() !== "") {
       const newTodos = [...todos];
-      newTodos[index] = { ...newTodos[index], text: text, editing: false };
-      setTodo(newTodos);
-      setText("");
+      newTodos[index] = { ...newTodos[index], text: editingText, editing: false };
+      setTodos(newTodos);
+      setEditingText("");
     }
-  }
+  };
 
-  const deleteTo = (index) =>{
+  const deleteTo = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
-    setTodo(newTodos);
-  }
+    setTodos(newTodos);
+  };
 
   return (
-    <div>
-        {/* Do not remove the main div */}
-        <h2>To Do List</h2>
-        <input type="text" id="enter-text" onChange={handletextchange} value={text}/>
-        <button id="Add-btn" onClick={addTo}>Add</button>
-        <ul>
-          {todos.map((todo, index)=>(
-            <li key={index}>
-              {todo.editing ? (
-                <>
-                  <input
-                    type="text"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    />
-                  <button id="Save-btn" onClick={() => saveEdit(index)}>Save</button>
-                </>
-              ) : (
-                <>
+    <div className="add_tasks_section">
+      <h2>To Do List</h2>
+      <input type="text" id="enter-text" onChange={handleTextChange} value={text} />
+      <button className="add" onClick={addTo}>Add</button>
+      <ul className="tasks_section">
+        {todos.map((todo, index) => (
+          <li key={index} className="task">
+            {todo.editing ? (
+              <>
+                <input
+                  type="text"
+                  value={editingText}
+                  onChange={(e) => setEditingText(e.target.value)}
+                />
+                <button className="save" onClick={() => saveEdit(index)}>Save</button>
+              </>
+            ) : (
+              <>
                 {todo.text}
-                <button id="Edit-btn" onClick={() => editTo(index)}>Edit</button>
-                </>
-              )}
-              {!todo.editing && <button id="Delete-btn" onClick={() => deleteTo(index)}>Delete</button>}
-              </li>
-              ))}
-        </ul>
+                <button className="edit" onClick={() => editTo(index)}>Edit</button>
+              </>
+            )}
+            {!todo.editing && <button className="delete" onClick={() => deleteTo(index)}>Delete</button>}
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
