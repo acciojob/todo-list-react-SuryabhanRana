@@ -6,6 +6,10 @@ body {
     padding: 0;
     background-color: #f4f4f4;
   }
+
+  h2{
+    margin-left: 45%;
+  }
   
   .container {
     max-width: 600px;
@@ -56,13 +60,17 @@ body {
     justify-content: space-between;
     padding: 8px;
     margin-bottom: 5px;
-    background-color: #f9f9f9;
+    background-color: rosybrown;
     border-radius: 3px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
   
   li input[type="text"] {
     width: calc(50% - 70px);
-    margin-right: 5px;
+    margin: 0;
+    margin-left: 27%;
+    margin-right: 10%;
   }
   
   li button {
