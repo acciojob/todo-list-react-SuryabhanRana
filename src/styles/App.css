@@ -25,7 +25,7 @@ body {
     margin-bottom: 20px;
   }
   
-  input[type="text"] {
+  #enter-text, #edit-text{
     width: calc(50% - 70px);
     padding: 8px;
     margin-bottom: 10px;

@@ -42,15 +42,16 @@ const App = () => {
   return (
     <div className="add_tasks_section">
       <h2>To Do List</h2>
-      <input type="text" id="enter-text" onChange={handleTextChange} value={text} />
+      <textarea type="text" id="enter-text" onChange={handleTextChange} value={text} />
       <button className="add" onClick={addTo}>Add</button>
       <ul className="tasks_section">
         {todos.map((todo, index) => (
           <li key={index} className="task">
             {todo.editing ? (
               <>
-                <input
+                <textarea
                   type="text"
+                  id="edit-text"
                   value={editingText}
                   onChange={(e) => setEditingText(e.target.value)}
                 />
